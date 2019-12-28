@@ -35,7 +35,7 @@ public class AdviceController {
 
     @GetMapping
     public ResponseEntity<List<Advice>> listAdvice(){
-        return new ResponseEntity<>(adviceService.listAdvice(), HttpStatus.OK);
+        return new ResponseEntity<>(adviceService.listAdvices(), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")

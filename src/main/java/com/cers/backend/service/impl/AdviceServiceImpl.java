@@ -8,6 +8,7 @@ import com.cers.backend.util.Constantes;
 import com.cers.backend.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -19,6 +20,8 @@ public class AdviceServiceImpl implements AdviceService {
 
     @Override
     public Advice insertAdvice(Advice advice) {
+        Date date = new Date();
+        advice.setDtPublication(date);
         return adviceRepository.save(advice);
     }
 
@@ -31,6 +34,8 @@ public class AdviceServiceImpl implements AdviceService {
         Optional<Advice> adv = adviceRepository.findById(id);
 
         if(adv.isPresent()){
+           Date date = new Date();
+           adv.get().setDtVisualization(date);
            adv.get().setId(id);
            return adviceRepository.save(adv.get());
         }else{
@@ -39,7 +44,7 @@ public class AdviceServiceImpl implements AdviceService {
     }
 
     @Override
-    public List<Advice> listAdvice() {
+    public List<Advice> listAdvices() {
         return (List<Advice>) adviceRepository.findAll();
     }
 

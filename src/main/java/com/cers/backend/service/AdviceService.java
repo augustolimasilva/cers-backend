@@ -11,7 +11,7 @@ public interface AdviceService {
 
     Advice alterAdvice(Advice advice, Long id);
 
-    List<Advice> listAdvice();
+    List<Advice> listAdvices();
 
     Response deleteById(Long id);
 
