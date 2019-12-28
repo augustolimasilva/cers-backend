@@ -15,14 +15,11 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class AvisoDTO {
+public class AdviceDTO {
 
-    @Length(min = 10, max = 200, message = "{aviso.titulo.length}")
-    private String titulo;
+    @Length(min = 10, max = 200, message = "{advice.title.length}")
+    private String title;
 
-    @Length(min = 10, max = 200, message = "{aviso.descricao.length}")
-    private String descricao;
-
-    @NotNull(message = "{aviso.dtPublicacao.notnull}")
-    private Date dtPublicacao;
+    @Length(min = 10, max = 200, message = "{advice.description.length}")
+    private String description;
 }

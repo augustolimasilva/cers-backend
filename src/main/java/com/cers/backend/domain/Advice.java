@@ -15,23 +15,23 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Aviso {
+public class Advice {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "titulo", length = 200, nullable = false)
-    private String titulo;
+    @Column(name = "title", length = 200, nullable = false)
+    private String title;
 
-    @Column(name = "descricao", length = 200, nullable = false)
-    private String descricao;
+    @Column(name = "description", length = 200, nullable = false)
+    private String description;
 
-    @Column(name = "dtPublicacao", nullable = false)
+    @Column(name = "dtPublication", nullable = false)
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
-    private Date dtPublicacao;
+    private Date dtPublication;
 
-    @Column(name = "dtVisualizacao", nullable = true)
+    @Column(name = "dtVisualization", nullable = true)
     @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
-    private Date dtVisualizacao;
+    private Date dtVisualization;
 }
