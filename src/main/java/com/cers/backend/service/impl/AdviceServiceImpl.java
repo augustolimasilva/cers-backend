@@ -39,9 +39,10 @@ public class AdviceServiceImpl implements AdviceService {
 
         if(adv.isPresent()){
            Date date = new Date();
-           adv.get().setDtVisualization(date);
-           adv.get().setId(id);
-           return adviceRepository.save(adv.get());
+           advice.setDtPublication(adv.get().getDtPublication());
+           advice.setDtVisualization(date);
+           advice.setId(id);
+           return adviceRepository.save(advice);
         }else{
             throw new CustomException(Constantes.ADVICE_NOT_FOUND);
         }
