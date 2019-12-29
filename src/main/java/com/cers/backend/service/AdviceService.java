@@ -2,8 +2,8 @@ package com.cers.backend.service;
 
 import com.cers.backend.domain.Advice;
 import com.cers.backend.util.Response;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface AdviceService {
 
@@ -11,7 +11,7 @@ public interface AdviceService {
 
     Advice alterAdvice(Advice advice, Long id);
 
-    List<Advice> listAdvices();
+    Page<Advice> listAdvices(Pageable pageable);
 
     Response deleteById(Long id);
 

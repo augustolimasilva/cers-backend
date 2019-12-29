@@ -7,12 +7,16 @@ import com.cers.backend.service.AdviceService;
 import com.cers.backend.util.Constantes;
 import com.cers.backend.util.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import org.springframework.data.domain.Pageable;
 
+@Service
 public class AdviceServiceImpl implements AdviceService {
 
     @Autowired
@@ -44,8 +48,8 @@ public class AdviceServiceImpl implements AdviceService {
     }
 
     @Override
-    public List<Advice> listAdvices() {
-        return (List<Advice>) adviceRepository.findAll();
+    public Page<Advice> listAdvices(Pageable pageable) {
+        return (Page<Advice>) adviceRepository.findAll(pageable);
     }
 
     @Override

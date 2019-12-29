@@ -6,11 +6,13 @@ import com.cers.backend.service.AdviceService;
 import com.cers.backend.util.Response;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 @CrossOrigin(origins =  "http://localhost:4200")
@@ -34,8 +36,8 @@ public class AdviceController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Advice>> listAdvice(){
-        return new ResponseEntity<>(adviceService.listAdvices(), HttpStatus.OK);
+    public ResponseEntity<Page<Advice>> listAdvices(Pageable pageable){
+        return new ResponseEntity<>(adviceService.listAdvices(pageable), HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
