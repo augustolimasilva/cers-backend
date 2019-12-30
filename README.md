@@ -1,2 +1,3 @@
-# cers-backend
-Projeto Back End - Cers
+# CersBackEnd
+
+This project was generated with [Spring Initializr](https://start.spring.io/).
