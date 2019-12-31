@@ -27,11 +27,9 @@ public class Advice {
     @Column(name = "description", length = 200, nullable = false)
     private String description;
 
-    @Column(name = "dtPublication", nullable = false)
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
+    @Column(name = "dtPublication", nullable = true)
     private Date dtPublication;
 
     @Column(name = "dtVisualization", nullable = true)
-    @DateTimeFormat(pattern = "dd/MM/yyyy HH:mm")
     private Date dtVisualization;
 }
